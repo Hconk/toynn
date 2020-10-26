@@ -4,8 +4,8 @@ project(toynn VERSION 0.1.0)
 include(CTest)
 enable_testing()
 
-add_subdirectory(3rdparty/benchmark)
 add_subdirectory(3rdparty/gtest)
+add_subdirectory(3rdparty/benchmark)
 
 add_subdirectory(src)
 add_subdirectory(benchmarks)

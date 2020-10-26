@@ -1,4 +1,6 @@
-cmake_minimum_required (VERSION 3.10.3)
+cmake_minimum_required (VERSION 3.10.0)
+
+project(benchmarks)
 
 find_package(Threads REQUIRED)
 
@@ -16,15 +18,11 @@ add_executable(
     ${SOURCE_FILES}
 )
 
-set(EXECUTABLE_OUTPUT_PATH  ..)
 
-target_include_directories(benchmarks 
+target_include_directories(${PROJECT_NAME}
     PUBLIC 
-    ${PROJECT_SOURCE_DIR}/include
+    ${PROJECT_SOURCE_DIR}/../include
 )
 
-target_link_libraries(benchmarks 
-    benchmark
-    ${CMAKE_THREAD_LIBS_INIT}
-    toynn
-)
+#${CMAKE_THREAD_LIBS_INIT}
+target_link_libraries(${PROJECT_NAME} benchmark toynn)

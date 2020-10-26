@@ -1,4 +1,4 @@
-cmake_minimum_required (VERSION 3.10.3)
+cmake_minimum_required (VERSION 3.0.0)
 
 include(GoogleTest)
 
@@ -6,7 +6,7 @@ set(SOURCE_FILES
     main_tests.cpp
 )
 
-set(EXECUTABLE_OUTPUT_PATH  ..)
+#set(EXECUTABLE_OUTPUT_PATH  ..)
 
 add_executable(tests
     ${SOURCE_FILES}
@@ -15,16 +15,11 @@ add_executable(tests
 target_include_directories(tests 
     PUBLIC 
     ${PROJECT_SOURCE_DIR}/include/
-    ../lib/benchmark/googletest/googletest/include
+    ../lib/benchmark/googletest/googletest/include/
 )
 
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 
-target_link_libraries(tests 
-    PUBLIC 
-        gtest
-        gtest_main
-        toynn
-)
+target_link_libraries(tests PUBLIC gtest gtest_main toynn)
 
 gtest_discover_tests(tests)
