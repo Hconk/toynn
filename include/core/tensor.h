@@ -19,23 +19,36 @@
 
 namespace toynn
 {
-    template <typename T>
+    template <typename T, uint8_t dim>
     class tensor
     {
     private:
         uint8_t m_dims;
         uint8_t m_type;
         uint8_t m_layout;
-        uint8_t m_dim_num;
+        static const uint8_t m_dim_num = dim;
         uint8_t m_elem_num;
 
         std::shared_ptr<T> data;
 
     public:
-        tensor(std::initializer_list<T> ilist);
-        ~tensor();
+        uint8_t dims() const
+        {
+            return m_dim_num;
+        }
+        tensor<T, dim>(std::initializer_list<T>);
+        ~tensor<T, dim>();
     };
 
+    template <typename T, uint8_t dims>
+    tensor<T, dims>::tensor(std::initializer_list<T> ilist)
+    {
+    }
+
+    template <typename T, uint8_t dims>
+    tensor<T, dims>::~tensor()
+    {
+    }
 } // namespace toynn
 
 #endif

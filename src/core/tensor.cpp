@@ -15,14 +15,5 @@
 #include <core/tensor.h>
 namespace toynn
 {
-    template <typename T>
-    tensor<T>::tensor(std::initializer_list<T> ilist)
-    {
-    }
-
-    template <typename T>
-    tensor<T>::~tensor()
-    {
-    }
 
 } // namespace toynn

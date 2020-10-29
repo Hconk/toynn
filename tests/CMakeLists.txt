@@ -18,6 +18,7 @@ target_include_directories(tests
     ../lib/benchmark/googletest/googletest/include/
 )
 
+
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 
 target_link_libraries(tests PUBLIC gtest gtest_main toynn)
