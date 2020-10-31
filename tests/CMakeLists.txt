@@ -2,9 +2,11 @@ cmake_minimum_required (VERSION 3.0.0)
 
 include(GoogleTest)
 
-set(SOURCE_FILES 
-    main_tests.cpp
-)
+aux_source_directory(. SOURCE_FILES)
+
+#set(SOURCE_FILES 
+#    main_tests.cpp
+#)
 
 #set(EXECUTABLE_OUTPUT_PATH  ..)
 
